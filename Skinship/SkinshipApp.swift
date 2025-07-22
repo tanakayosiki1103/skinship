@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct SkinshipApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
+  
+        @StateObject private var settings = UserSettings()
+        
+        var body: some Scene {
+            WindowGroup {
+                ContentView()
+                    .environmentObject(settings)  // 必要に応じて環境オブジェクトで渡す
+            }
         }
     }
-}
+
