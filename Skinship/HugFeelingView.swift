@@ -16,15 +16,15 @@ enum HugFeeling: String, CaseIterable, Identifiable, Hashable {
     var hugMessage: String {
         switch self {
         case .hotto:
-            return "そっと背中に手を添えたよ"
+            return "そっと頭に手を添えたよ"
         case .kokoro:
-            return "あなたの気持ちを、ぎゅっと包んだよ"
+            return "あなたの腕を、やさしく包んだよ"
         case .tottonoeru:
             return "一緒にすぅーっと深呼吸しよう"
         case .fuwa:
             return "ふわっと肩に触れたよ"
         case .yasumi:
-            return "となりで静かに寄り添ってるよ"
+            return "となりで静かに手をにぎってるよ"
         case .samisii:
             return "ギュってハグしたよ"
         }
@@ -68,12 +68,20 @@ enum HugFeeling: String, CaseIterable, Identifiable, Hashable {
 }
 
 // MARK: - メインビュー
+
+
 struct HugFeelingView: View {
     let feeling: HugFeeling
-    @ObservedObject var settings: UserSettings
+    @EnvironmentObject var settings: UserSettings
     
+    @State private var player: AVAudioPlayer?
+    @State private var synthesizer = AVSpeechSynthesizer()
     @State private var showMessage = false
     @State private var displayedLine = ""
+    
+    @State private var showHeart = false
+    @State private var heartScale: CGFloat = 0.5
+    @State private var heartOpacity: Double = 0.0
     
     var hugMessageWithName: String {
         if settings.name.isEmpty {
@@ -83,27 +91,104 @@ struct HugFeelingView: View {
         }
     }
     
+    func triggerHug() {
+        print("triggerHug called for feeling: \(feeling.rawValue)")
+        
+        if let style = feeling.vibrationStyle {
+            let generator = UIImpactFeedbackGenerator(style: style)
+            generator.impactOccurred()
+        } else {
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        }
+        
+        HugDataStore.shared.addHug()
+        print("HugDataStore.shared.addHug() called")
+        
+        if let randomLine = feeling.lines.randomElement() {
+            displayedLine = randomLine
+            withAnimation {
+                showMessage = true
+            }
+            
+            if settings.isVoiceEnabled {  // ← この行を追加
+                let utterance = AVSpeechUtterance(string: randomLine)
+                let gender = settings.gender
+                let voices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language == "ja-JP" }
+                
+                if gender == "男性" {
+                    utterance.voice = voices.first(where: { $0.name.contains("Otoya") }) ?? AVSpeechSynthesisVoice(language: "ja-JP")
+                } else if gender == "女性" {
+                    utterance.voice = voices.first(where: { $0.name.contains("Kyoko") }) ?? AVSpeechSynthesisVoice(language: "ja-JP")
+                } else {
+                    utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
+                }
+                
+                utterance.rate = 0.5
+                synthesizer.speak(utterance)
+            }
+        }
+
+        
+        // ハート表示アニメーション
+        showHeart = true
+        heartScale = 1.2
+        heartOpacity = 1.0
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+            withAnimation {
+                heartOpacity = 0.0
+                heartScale = 0.5
+            }
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                showHeart = false
+            }
+        }
+        
+        // メッセージ非表示は3秒後
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            withAnimation {
+                showMessage = false
+            }
+        }
+    }
+    
+    func playSound() {
+        guard let url = Bundle.main.url(forResource: "hug", withExtension: "mp3") else {
+            print("Sound file not found.")
+            return
+        }
+        
+        do {
+            player = try AVAudioPlayer(contentsOf: url)
+            player?.prepareToPlay()
+            player?.play()
+        } catch {
+            print("Error playing sound: \(error.localizedDescription)")
+        }
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
                 feeling.backgroundColor.ignoresSafeArea()
                 
                 VStack(spacing: 30) {
-                    Spacer()  // 上の空きスペース
+                    Spacer()
                     
-                    // テキストとボタンは中央寄り
                     Text(feeling.rawValue)
                         .font(.largeTitle)
                         .multilineTextAlignment(.center)
                     
                     Button(action: {
-                        triggerHug(for: feeling)
+                        triggerHug()
+                        playSound()
                     }) {
                         Text("スキンシップする")
                             .font(.title2)
                             .padding()
                             .frame(maxWidth: 220)
-                            .background(Color.pink)
+                            .background(Color.green)
                             .foregroundColor(.white)
                             .cornerRadius(25)
                     }
@@ -120,11 +205,26 @@ struct HugFeelingView: View {
                         .multilineTextAlignment(.center)
                         .padding(.top, 10)
                         .transition(.opacity)
+                        .minimumScaleFactor(0.5)
+                        .animation(.easeInOut, value: showMessage)
                     }
                     
-                    Spacer()  // 下の空きスペース（調整用）
+                    Spacer()
                 }
                 .padding()
+                
+                if showHeart {
+                    Image(systemName: "heart.fill")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                        .foregroundColor(.pink)
+                        .scaleEffect(heartScale)
+                        .opacity(heartOpacity)
+                        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 5)
+                        .animation(.easeOut(duration: 1.0), value: heartScale)
+                        .animation(.easeOut(duration: 1.0), value: heartOpacity)
+                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             
@@ -134,64 +234,14 @@ struct HugFeelingView: View {
                 .background(Color.clear)
                 .padding(.bottom, 10)
         }
-        .animation(.easeInOut, value: showMessage)
-    }
-
-
-
-    
-    func triggerHug(for feeling: HugFeeling) {
-        // バイブレーション
-        if let style = feeling.vibrationStyle {
-            let generator = UIImpactFeedbackGenerator(style: style)
-            generator.impactOccurred()
-        } else {
-            // デフォルトの振動
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-        }
-        
-        // ランダムなセリフを取得して音声再生
-        if let randomLine = feeling.lines.randomElement() {
-            displayedLine = randomLine
-            
-            let utterance = AVSpeechUtterance(string: randomLine)
-            
-            // 性別で声を変える
-            let gender = settings.gender
-            let voices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language == "ja-JP" }
-            
-            if gender == "男性" {
-                if let maleVoice = voices.first(where: { $0.name.contains("Otoya") }) {
-                    utterance.voice = maleVoice
-                }
-            } else if gender == "女性" {
-                if let femaleVoice = voices.first(where: { $0.name.contains("Kyoko") }) {
-                    utterance.voice = femaleVoice
-                }
-            } else {
-                utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
-            }
-            
-            utterance.rate = 0.5
-            
-            let synthesizer = AVSpeechSynthesizer()
-            synthesizer.speak(utterance)
-        }
-        
-        withAnimation {
-            showMessage = true
-        }
-        
-        // メッセージ表示を3秒で消す
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            withAnimation {
-                showMessage = false
-            }
-        }
     }
 }
+
+
 
 // MARK: - プレビュー
 #Preview {
-    HugFeelingView(feeling: .hotto, settings: UserSettings())
+    HugFeelingView(feeling: .hotto)
+        .environmentObject(UserSettings())
 }
+

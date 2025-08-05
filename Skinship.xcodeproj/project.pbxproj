@@ -6,13 +6,38 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		A63A1AEB2E3CEE5F00D3EA1B /* HugDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A1AEA2E3CEE5F00D3EA1B /* HugDataStore.swift */; };
+		A67747262E2CCA1700420EF7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67747252E2CCA1700420EF7 /* UserSettings.swift */; };
+		A677472F2E2D8D9A00420EF7 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A677472E2E2D8D9A00420EF7 /* GoogleMobileAds */; };
+		A6E415DC2E4080D80027347B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E415DB2E4080D80027347B /* SettingsView.swift */; };
+		A6E592402E319555006D8D94 /* DailyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5923F2E319555006D8D94 /* DailyData.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		A63A1AEA2E3CEE5F00D3EA1B /* HugDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HugDataStore.swift; sourceTree = "<group>"; };
 		A67747102E2CAEE800420EF7 /* Skinship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skinship.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A67747252E2CCA1700420EF7 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		A6E415DB2E4080D80027347B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A6E5923F2E319555006D8D94 /* DailyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		A67747302E2D8DF500420EF7 /* Exceptions for "Skinship" folder in "Skinship" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = A677470F2E2CAEE800420EF7 /* Skinship */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		A67747122E2CAEE800420EF7 /* Skinship */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				A67747302E2D8DF500420EF7 /* Exceptions for "Skinship" folder in "Skinship" target */,
+			);
 			path = Skinship;
 			sourceTree = "<group>";
 		};
@@ -23,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A677472F2E2D8D9A00420EF7 /* GoogleMobileAds in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +58,10 @@
 		A67747072E2CAEE800420EF7 = {
 			isa = PBXGroup;
 			children = (
+				A6E415DB2E4080D80027347B /* SettingsView.swift */,
+				A6E5923F2E319555006D8D94 /* DailyData.swift */,
+				A63A1AEA2E3CEE5F00D3EA1B /* HugDataStore.swift */,
+				A67747252E2CCA1700420EF7 /* UserSettings.swift */,
 				A67747122E2CAEE800420EF7 /* Skinship */,
 				A67747112E2CAEE800420EF7 /* Products */,
 			);
@@ -65,6 +95,7 @@
 			);
 			name = Skinship;
 			packageProductDependencies = (
+				A677472E2E2D8D9A00420EF7 /* GoogleMobileAds */,
 			);
 			productName = Skinship;
 			productReference = A67747102E2CAEE800420EF7 /* Skinship.app */;
@@ -94,6 +125,9 @@
 			);
 			mainGroup = A67747072E2CAEE800420EF7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				A677472D2E2D8D9A00420EF7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A67747112E2CAEE800420EF7 /* Products */;
 			projectDirPath = "";
@@ -119,6 +153,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6E415DC2E4080D80027347B /* SettingsView.swift in Sources */,
+				A67747262E2CCA1700420EF7 /* UserSettings.swift in Sources */,
+				A6E592402E319555006D8D94 /* DailyData.swift in Sources */,
+				A63A1AEB2E3CEE5F00D3EA1B /* HugDataStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,24 +287,38 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Skinship/Preview Content\"";
-				DEVELOPMENT_TEAM = F98PQRA2Y2;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F98PQRA2Y2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Skinship/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LinkMe;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.RESOANA.Skinship;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RESOANA.skinship;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = skinship1;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -278,24 +330,38 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Skinship/Preview Content\"";
-				DEVELOPMENT_TEAM = F98PQRA2Y2;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = F98PQRA2Y2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Skinship/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LinkMe;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.RESOANA.Skinship;
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.RESOANA.skinship;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = skinship1;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -324,6 +390,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A677472D2E2D8D9A00420EF7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A677472E2E2D8D9A00420EF7 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A677472D2E2D8D9A00420EF7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A67747082E2CAEE800420EF7 /* Project object */;
 }

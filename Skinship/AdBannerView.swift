@@ -3,7 +3,7 @@ import GoogleMobileAds
 import UIKit
 
 struct AdBannerView: UIViewRepresentable {
-    var isTest: Bool = true//trueテスト　false本番
+    var isTest: Bool = false//trueテスト　false本番
     
     func makeUIView(context: Context) -> BannerView {
         let banner = BannerView(adSize: AdSizeBanner)
