@@ -1,0 +1,150 @@
+/* 
+  Localizable.strings
+  Skinship
+
+  Created by 田中　よしき on 2025/09/03.
+  
+*/
+"enter_name" = "Enter the name !";
+"enter_name1" = "Shohei";
+"enter_name3" = "Please enter your name.";
+"gender_selection" = "Select the gender !";
+"male" = "Male";
+"female" = "Female";
+"register" = "Register";
+"start" = "start";
+"main_title" = "Main Screen";
+"skin" = "Connect gently with";
+"input_title" = "Input Screen";
+"change_partner" = "Change Partner";
+"registered_user_list" = "Registered Users";
+
+"user_list_title" = "Registered Users";
+"delete_user" = "Delete";
+
+"select_feeling" = "Select your current feeling";
+"voice_settings" = "Voice Settings";
+"trend" = "Trend";
+"gift_friend" = "Gift to a Friend";
+
+// HugFeeling の文字列
+"hotto" = "Relax";
+"kokoro" = "Calm";
+"tottonoeru" = "Refocus";
+"fuwa" = "Light";
+"yasumi" = "Rest";
+"samishii" = "Lonely";
+
+"hotto_message" = "Original English translation for hotto feeling";
+"kokoro_message" = "Original English translation for kokoro feeling";
+"tottonoeru_message" = "Original English translation for tottonoeru feeling";
+"fuwa_message" = "Original English translation for fuwa feeling";
+"yasumi_message" = "Original English translation for yasumi feeling";
+"samishii_message" = "Original English translation for samishii feeling";
+
+// hugMessage
+"hotto_hugMessage" = "Gently placed my hand on your head";
+"kokoro_hugMessage" = "Wrapped your arms gently";
+"tottonoeru_hugMessage" = "Breathed together calmly";
+"fuwa_hugMessage" = "Lightly touched your shoulder";
+"yasumi_hugMessage" = "Holding your hand quietly beside you";
+"samishii_hugMessage" = "Hugged you tightly";
+"do_hug" = "Give a Hug";
+"hug_with_name" = "Hug with %@ %@";
+
+// lines
+"hotto_line_0" = "You don’t have to do anything";
+"hotto_line_1" = "The distance between you will naturally become closer...";
+"hotto_line_2" = "Take it slow";
+
+"kokoro_line_0" = "I feel your feelings";
+"kokoro_line_1" = "I’ll gently wrap you";
+"kokoro_line_2" = "You are fine as you are";
+
+"tottonoeru_line_0" = "Take a deep breath";
+"tottonoeru_line_1" = "Time to refresh your mind is important";
+"tottonoeru_line_2" = "No need to rush";
+
+"fuwa_line_0" = "The fingertips touching my shoulder gently resonate in my heart.";
+"fuwa_line_1" = "Don’t think about anything, just relax";
+"fuwa_line_2" = "When I see that smile, I want to be closer to him.";
+
+"yasumi_line_0" = "When I gently hold your hand, my heart warms.";
+"yasumi_line_1" = "Relax and take a breather";
+"yasumi_line_2" = "Good job, rest well";
+
+"samishii_line_0" = "Spend heartwarming time";
+"samishii_line_1" = "You’re not alone, I’m here";
+"samishii_line_2" = "I can feel your breath nearby and my heart flutters...";
+
+"Trend" = "Trend";
+"NumberOfHugs" = "Number of Hugs";
+"PreviousWeek" = "← Previous Week";
+"NextWeek" = "Next Week →";
+
+"enable_voice" = "Enable voice reading";
+"voice_instructions" = "To switch to a male voice:\nGo to iPhone/iPad Settings → Accessibility → Spoken Content → Voices\nand select “Alex” under English.";
+
+"settings_title" = "Settings";
+/* テスト再生ボタン */
+"play_test_voice" = "Play Test Voice";
+"personality_yasashii" = "Gentle";
+"personality_akarui" = "Bright";
+"personality_cool" = "Cool";
+
+"exciting_experience" = "Exciting Experience"; // 英語
+"select_hug_part" = "Select the part you want to connect with.";
+"arm" = "Arm";
+"leg" = "Leg";
+"chest" = "Chest";
+"waist" = "Waist";
+"hair" = "Hair";
+"nose" = "Nose";
+"lips" = "Lips";
+
+"hug_button_title" = "Hug";
+
+/* HugMessages - English */
+
+/* Actions */
+"hug_action_sentence" = "%@ %@"; 
+"hug_action_arm" = "Their arms gently cross";
+"hug_action_leg" = "Their thighs softly touch";
+"hug_action_chest" = "Their chests press together";
+"hug_action_waist" = "A gentle touch at the waist";
+"hug_action_hair" = "He brushes her hair";
+"hug_action_nose" = "Their noses lightly touch";
+"hug_action_lips" = "Both close their eyes";
+
+"line_hug" = "I want to hug %@";
+"hug_line_arm_1" = "The moment I touched your arm, my heart started racing, and I wanted to get even closer to Rin.";
+"hug_line_arm_2" = "When our arms brushed against each other, I felt an urge to touch Rin even more.";
+"hug_line_arm_3" = "When our arms intertwined, my heart fluttered with excitement.";
+
+"hug_line_leg_1" = "When I softly touched Rin’s thigh, I wanted to be even closer to her.";
+"hug_line_leg_2" = "When our thighs touched, my heart gave a small jump.";
+"hug_line_leg_3" = "Wanting to touch Rin, my legs naturally moved closer.";
+
+"hug_line_chest_1" = "When our bodies pressed together, I wished I could stay like this with Rin forever.";
+"hug_line_chest_2" = "As our chests gently touched, my heart began to throb with warmth.";
+"hug_line_chest_3" = "Every time I feel Rin’s warmth, I just want to hold her tighter.";
+
+"hug_line_waist_1" = "When I touched Rin’s waist, it felt so good.";
+"hug_line_waist_2" = "The moment my hand touched Rin’s waist, my heart filled with gentle warmth.";
+"hug_line_waist_3" = "Rin’s waist felt so soft that I wanted to stay together forever.";
+
+"hug_line_hair_1" = "Rin’s hair from behind is so beautiful.";
+"hug_line_hair_2" = "When I touched her hair, I could feel Rin’s warmth.";
+"hug_line_hair_3" = "Rin’s hair feels so nice… I just want to touch it more.";
+
+"hug_line_nose_1" = "As our noses softly touched, my desire to be closer to Rin overflowed.";
+"hug_line_nose_2" = "The moment our noses touched, my heart began to race.";
+"hug_line_nose_3" = "When I brushed against Rin’s nose, my heart skipped a beat.";
+
+"hug_line_lips_1" = "It feels like Rin and I are in our own little world.";
+"hug_line_lips_2" = "The moment I close my eyes, I feel like I want to become one with Rin.";
+"hug_line_lips_3" = "That heartbeat right before our warmths meet… I want to kiss her.";
+
+
+/* Common format for name + action */
+"hug_with_name" = "Hug with %@ %@";

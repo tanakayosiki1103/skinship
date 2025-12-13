@@ -1,0 +1,148 @@
+/* 
+  Localizable.strings
+  Skinship
+
+  Created by 田中　よしき on 2025/09/03.
+  
+*/
+"enter_name" = "相手の名前を入力してください。";
+"enter_name1" = "しょうへい";
+"enter_name3" = "あなたの名前を入力してください。";
+"gender_selection" = "相手の性別を選択してください。";
+"male" = "男性";
+"female" = "女性";
+"register" = "登録";
+"start" = "はじめる";
+"input_title" = "入力画面";
+"main_title" = "メイン画面";
+"skin" = "とスキンシップする";
+"change_partner" = "相手を変更する";
+"registered_user_list" = "登録相手リスト";
+
+"user_list_title" = "登録相手リスト";
+"delete_user" = "削除";
+
+"select_feeling" = "今の気分を選んでね";
+"voice_settings" = "音声設定";
+"trend" = "トレンド";
+"gift_friend" = "友達にプレゼント";
+
+// HugFeeling の文字列
+"hotto" = "ほっとしたい";
+"kokoro" = "落ちつきたい";
+"tottonoeru" = "ととのえたい";
+"fuwa" = "ふわっとしたい";
+"yasumi" = "休みたい";
+"samishii" = "さみしい";
+
+"hotto_message" = "ほっとしたい気分のときの元の文章";
+"kokoro_message" = "落ち着きたい気分の元の文章";
+"tottonoeru_message" = "ととのえたい気分の元の文章";
+"fuwa_message" = "ふわっとしたい気分の元の文章";
+"yasumi_message" = "休みたい気分の元の文章";
+"samishii_message" = "さみしい気分の元の文章";
+
+// hugMessage
+"hotto_hugMessage" = "そっと頭に手を添えたよ";
+"kokoro_hugMessage" = "あなたの腕を、やさしく包んだよ";
+"tottonoeru_hugMessage" = "一緒にすぅーっと深呼吸したよ";
+"fuwa_hugMessage" = "ふわっと肩に触れたよ";
+"yasumi_hugMessage" = "となりで静かに手をにぎってるよ";
+"samishii_hugMessage" = "ギュってハグしたよ";
+"do_hug" = "スキンシップする";
+"hug_with_name" = "%@と、%@";
+
+// lines
+"hotto_line_0" = "なんにもしなくていいよ";
+"hotto_line_1" = "寄り添う距離が、自然と近くなる…";
+"hotto_line_2" = "ゆっくりしてね";
+
+"kokoro_line_0" = "あなたの気持ち、ちゃんと伝わってるよ";
+"kokoro_line_1" = "そっと包み込むよ";
+"kokoro_line_2" = "そのままのあなたで大丈夫";
+
+"tottonoeru_line_0" = "いったん深呼吸しよう";
+"tottonoeru_line_1" = "心を整える時間、大切だよ";
+"tottonoeru_line_2" = "焦らなくていいよ";
+
+"fuwa_line_0" = "肩に触れる指先が、心にそっと響く。";
+"fuwa_line_1" = "なにも考えず、ぼーっとしよ";
+"fuwa_line_2" = "その笑顔を見ると、もっとそばにいたくなる。";
+
+"yasumi_line_0" = "そっと手を握ると、心が温かくなる。";
+"yasumi_line_1" = "力を抜いて、ほっと一息";
+"yasumi_line_2" = "おつかれさま、ちゃんと休もう";
+
+"samishii_line_0" = "心がぽかぽかになる時間を過ごそう";
+"samishii_line_1" = "ひとりじゃないよ、ここにいるよ";
+"samishii_line_2" = "君の吐息が近くに感じられて、胸がざわめく…";
+
+"Trend" = "トレンド";
+"NumberOfHugs" = "スキンシップの回数";
+"PreviousWeek" = "← 前の週";
+"NextWeek" = "次の週 →";
+
+"enable_voice" = "音声読み上げを有効にする";
+"voice_instructions" = "※ 音声を男性に切り替えるには\niPhone/iPadの「設定」→「アクセシビリティ」→「スピーチ」→「声」から\n「日本語」の「Otoya」を選択してください。";
+"settings_title" = "設定";
+/* テスト再生ボタン */
+"play_test_voice" = "テスト再生";
+"personality_yasashii" = "優しい";
+"personality_akarui" = "明るい";
+"personality_cool" = "クール";
+
+"exciting_experience" = "ドキドキ体験"; // 日本語
+"select_hug_part" = "スキンシップしたい部位を選んでください";
+"arm" = "腕";
+"leg" = "足";
+"chest" = "胸元";
+"waist" = "腰";
+"hair" = "髪";
+"nose" = "鼻";
+"lips" = "唇";
+
+"hug_button_title" = "スキンシップする";
+
+/* HugMessages - 日本語 */
+
+/* Actions */
+"hug_action_sentence" = "%@と %@"; 
+"hug_action_arm" = "両腕が軽く交わる";
+"hug_action_leg" = "太ももがそっと触れ合う";
+"hug_action_chest" = "胸元を重ね合わせる";
+"hug_action_waist" = "腰にそっと触れる";
+"hug_action_hair" = "後ろ髪を撫でる";
+"hug_action_nose" = "鼻先がかすかに触れる";
+"hug_action_lips" = "二人同時に目を閉じる";
+
+"line_hug" = "%@をハグしたい";
+"hug_line_arm_1" = "触れた瞬間、胸がドキドキしてりんにもっと近づきたくなった";
+"hug_line_arm_2" = "腕が触れ合うと、りんにもっと触れたい気持ちになる";
+"hug_line_arm_3" = "腕が交わる瞬間、心がそわそわ弾む";
+
+"hug_line_leg_1" = "太ももにそっと触れた瞬間、りんともっと近くなりたいと思った";
+"hug_line_leg_2" = "太ももが触れると、胸が小さく跳ねた";
+"hug_line_leg_3" = "りんに触れたくて、足の距離が自然と近づいた";
+
+"hug_line_chest_1" = "上半身が重なると、りんとずっとこうしていたい";
+"hug_line_chest_2" = "胸元がかすかに重なると、心がときめく";
+"hug_line_chest_3" = "りんの温もりを感じるたび、もっと抱きしめたい";
+
+"hug_line_waist_1" = "りんの腰に触れると、めっちゃいい";
+"hug_line_waist_2" = "りんの腰に触れた瞬間、心がじんわり温かくなる";
+"hug_line_waist_3" = "りんの腰が柔らかくて、ずっと一緒にいたい";
+
+"hug_line_hair_1" = "りんの後ろ髪、すごく綺麗";
+"hug_line_hair_2" = "髪に触れた瞬間、りんの温もりを感じる";
+"hug_line_hair_3" = "りんの髪、もっと触りたい";
+
+"hug_line_nose_1" = "鼻先がそっと触れ、りんと触れ合いたい気持ちが溢れる";
+"hug_line_nose_2" = "鼻が触れた瞬間、胸がドキドキする";
+"hug_line_nose_3" = "りんの鼻先に触れると、心が跳ねた";
+
+"hug_line_lips_1" = "りんと二人だけの世界にいる感じだ";
+"hug_line_lips_2" = "目を閉じた瞬間、りんとひとつになりたくなる";
+"hug_line_lips_3" = "二人のぬくもりが重なる前の、胸が高鳴る時間、、、したい";
+
+/* 名前を置換する共通フォーマット */
+"hug_with_name" = "%@と%@";
