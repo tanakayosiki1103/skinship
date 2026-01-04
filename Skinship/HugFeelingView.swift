@@ -1,247 +1,170 @@
 import SwiftUI
-import AVFoundation
-
-// MARK: - 癒し気分（感情）定義
-enum HugFeeling: String, CaseIterable, Identifiable, Hashable {
-    
-    case hotto = "ほっとしたい"
-    case kokoro = "落ちつきたい"
-    case tottonoeru = "ととのえたい"
-    case fuwa = "ふわっとしたい"
-    case yasumi = "やすみたい"
-    case samisii = "さみしい"
-    
-    var id: String { self.rawValue }
-    
-    var hugMessage: String {
-        switch self {
-        case .hotto:
-            return "そっと頭に手を添えたよ"
-        case .kokoro:
-            return "あなたの腕を、やさしく包んだよ"
-        case .tottonoeru:
-            return "一緒にすぅーっと深呼吸しよう"
-        case .fuwa:
-            return "ふわっと肩に触れたよ"
-        case .yasumi:
-            return "となりで静かに手をにぎってるよ"
-        case .samisii:
-            return "ギュってハグしたよ"
-        }
-    }
-    
-    var lines: [String] {
-        switch self {
-        case .hotto:
-            return ["なんにもしなくていいよ", "ここにいていいんだよ", "ゆっくりしてね"]
-        case .kokoro:
-            return ["あなたの気持ち、ちゃんと伝わってるよ", "そっと包み込むよ", "そのままのあなたで大丈夫"]
-        case .tottonoeru:
-            return ["いったん深呼吸しよう", "心を整える時間、大切だよ", "焦らなくていいよ"]
-        case .fuwa:
-            return ["ふわっと軽くなるね", "なにも考えず、ぼーっとしよ", "気持ちが空に浮かぶみたい"]
-        case .yasumi:
-            return ["ここで少し、ひとやすみしよう", "力を抜いて、ほっと一息", "おつかれさま、ちゃんと休もう"]
-        case .samisii:
-            return ["心がぽかぽかになる時間を過ごそう", "ひとりじゃないよ、ここにいるよ", "言わなくても、ちゃんと伝わってるよ"]
-        }
-    }
-    
-    var vibrationStyle: UIImpactFeedbackGenerator.FeedbackStyle? {
-        switch self {
-        case .kokoro: return .medium
-        case .tottonoeru: return .light
-        default: return nil
-        }
-    }
-    
-    var backgroundColor: Color {
-        switch self {
-        case .hotto: return Color.green.opacity(0.15)
-        case .kokoro: return Color.pink.opacity(0.15)
-        case .tottonoeru: return Color.blue.opacity(0.15)
-        case .fuwa: return Color.purple.opacity(0.15)
-        case .yasumi: return Color.gray.opacity(0.15)
-        case .samisii: return Color.gray.opacity(0.15)
-        }
-    }
-}
-
-// MARK: - メインビュー
-
 
 struct HugFeelingView: View {
     let feeling: HugFeeling
     @EnvironmentObject var settings: UserSettings
     
-    @State private var player: AVAudioPlayer?
-    @State private var synthesizer = AVSpeechSynthesizer()
-    @State private var showMessage = false
+    @State private var hugMessageWithName = ""
     @State private var displayedLine = ""
+    @State private var showMessage = false
+    @State private var glow = false
     
-    @State private var showHeart = false
-    @State private var heartScale: CGFloat = 0.5
-    @State private var heartOpacity: Double = 0.0
+    @State private var bgTheme: NeoBackgroundTheme = .aqua
     
-    var hugMessageWithName: String {
-        if settings.name.isEmpty {
-            return feeling.hugMessage
-        } else {
-            return "\(settings.name)と" + feeling.hugMessage
-        }
+    // ボタン表示用（登録名 or デフォルト）
+    var partnerName: String {
+        settings.name.isEmpty
+        ? NSLocalizedString("default_partner", comment: "あなた")
+        : settings.name
     }
     
     func triggerHug() {
-        print("triggerHug called for feeling: \(feeling.rawValue)")
+        settings.incrementCount(for: feeling)
+        HugDataStore.shared.addHug()
         
-        if let style = feeling.vibrationStyle {
-            let generator = UIImpactFeedbackGenerator(style: style)
-            generator.impactOccurred()
-        } else {
-            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+        let name = partnerName
+        hugMessageWithName = "\(name)\(feeling.hugMessage)"
+        
+        let key = feeling.lines.randomElement() ?? ""
+        let line = NSLocalizedString(key, comment: "")
+        
+        displayedLine = ""
+        showMessage = true
+        
+        if settings.isVoiceEnabled {
+            settings.speak(line)
         }
         
-        HugDataStore.shared.addHug()
-        print("HugDataStore.shared.addHug() called")
+        let interval = 0.035
         
-        if let randomLine = feeling.lines.randomElement() {
-            displayedLine = randomLine
-            withAnimation {
-                showMessage = true
-            }
-            
-            if settings.isVoiceEnabled {  // ← この行を追加
-                let utterance = AVSpeechUtterance(string: randomLine)
-                let gender = settings.gender
-                let voices = AVSpeechSynthesisVoice.speechVoices().filter { $0.language == "ja-JP" }
+        for (i, c) in line.enumerated() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + interval * Double(i)) {
+                displayedLine.append(c)
                 
-                if gender == "男性" {
-                    utterance.voice = voices.first(where: { $0.name.contains("Otoya") }) ?? AVSpeechSynthesisVoice(language: "ja-JP")
-                } else if gender == "女性" {
-                    utterance.voice = voices.first(where: { $0.name.contains("Kyoko") }) ?? AVSpeechSynthesisVoice(language: "ja-JP")
-                } else {
-                    utterance.voice = AVSpeechSynthesisVoice(language: "ja-JP")
+                // ✅ 最後の1文字が出た「直後」に広告判定（余韻0.4秒）
+                if i == line.count - 1 {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                        UnityAdsManager.shared.showAdIfNeededAfterHug()
+
+                    }
                 }
-                
-                utterance.rate = 0.5
-                synthesizer.speak(utterance)
             }
         }
 
         
-        // ハート表示アニメーション
-        showHeart = true
-        heartScale = 1.2
-        heartOpacity = 1.0
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-            withAnimation {
-                heartOpacity = 0.0
-                heartScale = 0.5
-            }
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-                showHeart = false
-            }
+        UIImpactFeedbackGenerator(style: .light).impactOccurred()
+        withAnimation(.easeInOut(duration: 0.35)) { glow = true }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.55) {
+            withAnimation(.easeInOut(duration: 0.55)) { glow = false }
         }
         
-        // メッセージ非表示は3秒後
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-            withAnimation {
-                showMessage = false
-            }
+        // ✅ 押すたびランダム背景（同じ連続は回避）
+        let themes = NeoBackgroundTheme.allCases
+        var next = themes.randomElement() ?? .aqua
+        if next == bgTheme, themes.count > 1 {
+            next = themes.filter { $0 != bgTheme }.randomElement() ?? next
         }
-    }
-    
-    func playSound() {
-        guard let url = Bundle.main.url(forResource: "hug", withExtension: "mp3") else {
-            print("Sound file not found.")
-            return
+        withAnimation(.easeInOut(duration: 0.8)) {
+            bgTheme = next
         }
         
-        do {
-            player = try AVAudioPlayer(contentsOf: url)
-            player?.prepareToPlay()
-            player?.play()
-        } catch {
-            print("Error playing sound: \(error.localizedDescription)")
-        }
+        UIImpactFeedbackGenerator(style: .soft).impactOccurred()
+        
+       
     }
     
     var body: some View {
-        VStack(spacing: 0) {
-            ZStack {
-                feeling.backgroundColor.ignoresSafeArea()
-                
-                VStack(spacing: 30) {
-                    Spacer()
-                    
-                    Text(feeling.rawValue)
-                        .font(.largeTitle)
-                        .multilineTextAlignment(.center)
-                    
-                    Button(action: {
-                        triggerHug()
-                        playSound()
-                    }) {
-                        Text("スキンシップする")
-                            .font(.title2)
-                            .padding()
-                            .frame(maxWidth: 220)
-                            .background(Color.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(25)
-                    }
-                    
-                    if showMessage {
-                        VStack(spacing: 8) {
-                            Text(hugMessageWithName)
-                                .font(.title3)
-                                .foregroundColor(.blue)
-                            Text(displayedLine)
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                        }
-                        .multilineTextAlignment(.center)
-                        .padding(.top, 10)
-                        .transition(.opacity)
-                        .minimumScaleFactor(0.5)
-                        .animation(.easeInOut, value: showMessage)
-                    }
-                    
-                    Spacer()
-                }
-                .padding()
-                
-                if showHeart {
-                    Image(systemName: "heart.fill")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 100, height: 100)
-                        .foregroundColor(.pink)
-                        .scaleEffect(heartScale)
-                        .opacity(heartOpacity)
-                        .position(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 5)
-                        .animation(.easeOut(duration: 1.0), value: heartScale)
-                        .animation(.easeOut(duration: 1.0), value: heartOpacity)
-                }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        ZStack {
+            NeoBackground(theme: bgTheme)
+                .allowsHitTesting(false)
             
-            // 広告は画面の一番下
-            AdBannerView()
-                .frame(width: 320, height: 50)
-                .background(Color.clear)
-                .padding(.bottom, 10)
+            VStack(spacing: 18) {
+             
+//
+                Text(feeling.title)
+                    .font(.system(size: 28, weight: .black, design: .rounded))
+                    .foregroundStyle(.white)
+                    .shadow(color: .black.opacity(0.25), radius: 10, x: 0, y: 6)
+                    .padding(.top, 20)
+                
+                Spacer(minLength: 20)
+                Button {
+                    triggerHug()
+                } label: {
+                    HStack(spacing: 10) {
+                        Image(systemName: "sparkles")
+                            .font(.system(size: 18, weight: .bold))
+                        
+                        Text(
+                            String(
+                                format: NSLocalizedString("skin_with", comment: ""),
+                                partnerName
+                            )
+                        )
+                        .font(.system(size: 18, weight: .black, design: .rounded))
+
+                    }
+                    .foregroundColor(.white)
+                    .padding(.vertical, 14)
+                    .frame(maxWidth: .infinity)
+                    .glassCard(0.16)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: NeoTheme.corner, style: .continuous)
+                            .stroke(feeling.color.opacity(0.35), lineWidth: 1)
+                    )
+                    .shadow(
+                        color: feeling.color.opacity(glow ? 0.45 : 0.18),
+                        radius: glow ? 26 : 14,
+                        x: 0,
+                        y: 10
+                    )
+                }
+                
+                
+                
+                // メッセージ（枠を消したいなら padding だけにしてOK）
+                if showMessage {
+                    VStack(spacing: 10) {
+                        Text(hugMessageWithName)
+                            .font(.system(size: 28, weight: .black, design: .rounded))
+                            .foregroundColor(.blue)
+                            .multilineTextAlignment(.center)
+                            .padding(.bottom, 10)
+                        
+                        Text("「\(displayedLine)」")
+                            .font(.system(size: 28, weight: .black, design: .rounded))
+                            .foregroundColor(.white.opacity(0.95))
+                            .multilineTextAlignment(.center)
+                            .minimumScaleFactor(0.8)
+                    }
+                    .padding(.top, 12)
+                    .transition(.opacity.combined(with: .scale(scale: 0.98)))
+                }
+                
+                Spacer(minLength: 40)
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 18)
+            .frame(maxWidth: 560)
+        }
+        // ✅ navigation系 modifier は「bodyの戻り値(ZStack)」に付ける
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
+        .toolbarBackground(Color.black.opacity(0.35), for: .navigationBar)
+        .onAppear {
+            // 最初もランダムにしたいなら
+            bgTheme = NeoBackgroundTheme.allCases.randomElement() ?? .aqua
         }
     }
 }
 
 
 
-// MARK: - プレビュー
-#Preview {
-    HugFeelingView(feeling: .hotto)
-        .environmentObject(UserSettings())
+#Preview("HugFeelingView - ja") {
+    NavigationStack {
+        HugFeelingView(feeling: .hotto)
+            .environmentObject(UserSettings())
+    }
+    .environment(\.locale, Locale(identifier: "ja"))
 }
-

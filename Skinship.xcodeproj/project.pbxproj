@@ -7,17 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A609ECB72EFF9D7100DFA493 /* UnityAds.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A609ECB52EFF9C1900DFA493 /* UnityAds.xcframework */; };
+		A609ECB82EFF9D7200DFA493 /* UnityAds.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A609ECB52EFF9C1900DFA493 /* UnityAds.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		A609ECBD2F01385700DFA493 /* Personality.swift in Sources */ = {isa = PBXBuildFile; fileRef = A609ECBC2F01385700DFA493 /* Personality.swift */; };
 		A63A1AEB2E3CEE5F00D3EA1B /* HugDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A63A1AEA2E3CEE5F00D3EA1B /* HugDataStore.swift */; };
 		A67747262E2CCA1700420EF7 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67747252E2CCA1700420EF7 /* UserSettings.swift */; };
-		A677472F2E2D8D9A00420EF7 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = A677472E2E2D8D9A00420EF7 /* GoogleMobileAds */; };
+		A6974E592EFB972800F17792 /* HapticHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6974E582EFB972800F17792 /* HapticHelper.swift */; };
+		A69A37302EFE9C4A006FE925 /* SpecialSparkleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69A372F2EFE9C4A006FE925 /* SpecialSparkleButton.swift */; };
 		A6E415DC2E4080D80027347B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E415DB2E4080D80027347B /* SettingsView.swift */; };
 		A6E592402E319555006D8D94 /* DailyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E5923F2E319555006D8D94 /* DailyData.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A609ECB92EFF9D7200DFA493 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A609ECB82EFF9D7200DFA493 /* UnityAds.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		A609ECB52EFF9C1900DFA493 /* UnityAds.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = UnityAds.xcframework; sourceTree = "<group>"; };
+		A609ECBC2F01385700DFA493 /* Personality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personality.swift; sourceTree = "<group>"; };
 		A63A1AEA2E3CEE5F00D3EA1B /* HugDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HugDataStore.swift; sourceTree = "<group>"; };
 		A67747102E2CAEE800420EF7 /* Skinship.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Skinship.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A67747252E2CCA1700420EF7 /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		A6974E582EFB972800F17792 /* HapticHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticHelper.swift; sourceTree = "<group>"; };
+		A69A372F2EFE9C4A006FE925 /* SpecialSparkleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecialSparkleButton.swift; sourceTree = "<group>"; };
 		A6E415DB2E4080D80027347B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A6E5923F2E319555006D8D94 /* DailyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -27,6 +49,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Info.plist,
+				"Preview Content/Preview Assets.xcassets",
 			);
 			target = A677470F2E2CAEE800420EF7 /* Skinship */;
 		};
@@ -48,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A677472F2E2D8D9A00420EF7 /* GoogleMobileAds in Frameworks */,
+				A609ECB72EFF9D7100DFA493 /* UnityAds.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,10 +81,14 @@
 		A67747072E2CAEE800420EF7 = {
 			isa = PBXGroup;
 			children = (
+				A609ECB52EFF9C1900DFA493 /* UnityAds.xcframework */,
+				A69A372F2EFE9C4A006FE925 /* SpecialSparkleButton.swift */,
 				A6E415DB2E4080D80027347B /* SettingsView.swift */,
+				A6974E582EFB972800F17792 /* HapticHelper.swift */,
 				A6E5923F2E319555006D8D94 /* DailyData.swift */,
 				A63A1AEA2E3CEE5F00D3EA1B /* HugDataStore.swift */,
 				A67747252E2CCA1700420EF7 /* UserSettings.swift */,
+				A609ECBC2F01385700DFA493 /* Personality.swift */,
 				A67747122E2CAEE800420EF7 /* Skinship */,
 				A67747112E2CAEE800420EF7 /* Products */,
 			);
@@ -85,6 +112,7 @@
 				A677470C2E2CAEE800420EF7 /* Sources */,
 				A677470D2E2CAEE800420EF7 /* Frameworks */,
 				A677470E2E2CAEE800420EF7 /* Resources */,
+				A609ECB92EFF9D7200DFA493 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -95,7 +123,6 @@
 			);
 			name = Skinship;
 			packageProductDependencies = (
-				A677472E2E2D8D9A00420EF7 /* GoogleMobileAds */,
 			);
 			productName = Skinship;
 			productReference = A67747102E2CAEE800420EF7 /* Skinship.app */;
@@ -122,11 +149,11 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = A67747072E2CAEE800420EF7;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				A677472D2E2D8D9A00420EF7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A67747112E2CAEE800420EF7 /* Products */;
@@ -157,6 +184,9 @@
 				A67747262E2CCA1700420EF7 /* UserSettings.swift in Sources */,
 				A6E592402E319555006D8D94 /* DailyData.swift in Sources */,
 				A63A1AEB2E3CEE5F00D3EA1B /* HugDataStore.swift in Sources */,
+				A69A37302EFE9C4A006FE925 /* SpecialSparkleButton.swift in Sources */,
+				A609ECBD2F01385700DFA493 /* Personality.swift in Sources */,
+				A6974E592EFB972800F17792 /* HapticHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +198,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -231,6 +262,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -310,7 +342,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.RESOANA.skinship;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -353,7 +385,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.RESOANA.skinship;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -390,25 +422,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A677472D2E2D8D9A00420EF7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 12.7.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A677472E2E2D8D9A00420EF7 /* GoogleMobileAds */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A677472D2E2D8D9A00420EF7 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
-			productName = GoogleMobileAds;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A67747082E2CAEE800420EF7 /* Project object */;
 }

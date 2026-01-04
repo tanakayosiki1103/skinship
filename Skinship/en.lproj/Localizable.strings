@@ -1,0 +1,287 @@
+"intro_p1" = "Have you been craving a little human warmth lately?";
+"intro_p2" = "Not desperately—just enough to feel someone’s presence.";
+"intro_p3" = "It might not be loneliness, but the feeling of searching for a safe place to rest your heart.";
+"intro_p4" = "Wanting closeness is a sign that you’re taking care of yourself.";
+"intro_p5" = "You don’t have to change anything right now. It’s okay to feel exactly as you do.";
+"intro_p6" = "Tonight, let yourself lean in—just a little. 💐";
+
+"intro_start" = "Start";
+"intro_dont_show_again" = "Don’t show again";
+"intro_skip" = "Skip";
+
+"input_title" = "Input";
+
+/* Partner name input */
+"enter_name" = "Please enter your partner’s name.";
+
+/* Name placeholders */
+"enter_name1" = "Alex";
+"enter_name2" = "Emily";
+"example_prefix" = "Example:";
+
+/* Gender selection */
+"gender_selection" = "Please select your partner’s gender.";
+
+/* Gender */
+"male" = "Male";
+"female" = "Female";
+"edit" = "Edit";
+"done" = "Done";
+
+/* Register */
+"register" = "Register";
+"gender_male_short" = "Male";
+"gender_female_short" = "Female";
+"gender_unknown_short" = "Unknown";
+
+"user_list_title" = "Partner List";
+"user_list_subtitle" = "Tap to switch";
+"user_list_delete_confirm_title" = "Delete this user?";
+"user_list_delete" = "Delete";
+"user_list_cancel" = "Cancel";
+"user_list_empty_title" = "No users yet";
+"user_list_empty_subtitle" = "Add someone first";
+
+"edit" = "Edit";
+"done" = "Done";
+/* UserListView */
+"user_list_title" = "Partner List";
+"user_list_subtitle" = "Tap to switch partner";
+
+"user_list_delete_confirm_title" = "Delete this partner?";
+"user_list_delete" = "Delete";
+"user_list_cancel" = "Cancel";
+
+"user_list_empty_title" = "No partners yet";
+"user_list_empty_subtitle" = "Add a partner first.";
+
+"user_list_edit" = "Edit";
+"user_list_done" = "Done";
+
+/* Gender short labels */
+"gender_male_short" = "Male";
+"gender_female_short" = "Female";
+"gender_unknown_short" = "Unknown";
+
+/* Start */
+"start" = "Start";
+"user_list_title" = "Partner List";
+"user_list_subtitle" = "Tap to switch partners";
+
+"user_list_delete_confirm_title" = "Delete this partner?";
+"user_list_delete" = "Delete";
+"user_list_cancel" = "Cancel";
+
+"user_list_empty_title" = "No partners yet";
+"user_list_empty_subtitle" = "Add a partner to get started";
+
+/* Hug part selection */
+"select_hug_part" = "Choose where to connect";
+
+/* MainView */
+"main_title" = "Main";
+"change_partner" = "Change Partner";
+"registered_user_list" = "Partner List";
+"skin_with" = "Create a physical connection with %@.";
+
+
+
+"select_feeling" = "How are you feeling right now?";
+
+"voice_settings" = "Voice Settings";
+"trend" = "Trends";
+"exciting_experience" = "Exciting Experience";
+"gift_friend" = "Send to a Friend";
+
+"input_title2" = "Input";
+"enter_name3" = "Please enter your name.";
+
+/* Settings */
+"voice_enable" = "Enable voice narration";
+"personality_select" = "Voice personality";
+"personality_gentle" = "Gentle";
+"personality_bright" = "Bright";
+"personality_cool" = "Cool";
+"voice_test" = "Test Voice";
+"start_name_input" = "Exciting Experience";
+/* Voice test sample */
+"voice_test_text" = "This is Matching Feeling. Please enjoy the experience.";
+
+"voice_description" =
+"To switch to a male voice:\n\n\
+Open Settings → Accessibility → Spoken Content → Voices,\n\
+Select English, then download and choose a male voice.\n\n\
+This app uses the voice set on your device.";
+
+/* Feelings */
+"feeling_hotto" = "Relieved";
+"feeling_calm" = "Calm";
+"feeling_balanced" = "Balanced";
+"feeling_soft" = "Gentle";
+"feeling_rest" = "Tired";
+"feeling_lonely" = "Lonely";
+
+/* Hug message */
+"hug_hotto" = "gently placed a hand on your head";
+"hug_calm" = "wrapped you in a gentle embrace";
+"hug_balanced" = "took a slow breath together with you";
+"hug_soft" = "softly touched your shoulder";
+"hug_rest" = "quietly held your hand beside you";
+"hug_lonely" = "hugged you tightly";
+
+/* Lines */
+// Relieved
+"hotto_line1" = "You did a great job today";
+"hotto_line2" = "It’s okay to relax now";
+"hotto_line3" = "Take it slow";
+"hotto_line4" = "You don’t have to do anything right now";
+"hotto_line5" = "Let’s take a breather";
+
+// Calm
+"calm_line1" = "There’s no need to rush";
+"calm_line2" = "Let’s stay calm";
+"calm_line3" = "Enjoy this quiet moment";
+"calm_line4" = "Focus on your breathing";
+"calm_line5" = "You’re fine just as you are";
+
+// Balanced
+"balanced_line1" = "Let’s bring your body and mind into balance";
+"balanced_line2" = "Take a deep breath";
+"balanced_line3" = "Focus on how you feel right now";
+"balanced_line4" = "There’s no need to hurry";
+"balanced_line5" = "Slowly, everything will settle";
+
+// Gentle
+"soft_line1" = "Let yourself be gentle";
+"soft_line2" = "You can relax into this moment";
+"soft_line3" = "Loosen up, just a little";
+"soft_line4" = "Your heart feels lighter";
+
+// Rest
+"rest_line1" = "Let’s rest here for a while";
+"rest_line2" = "You don’t have to push yourself";
+"rest_line3" = "You can close your eyes";
+"rest_line4" = "It’s a safe time to rest";
+"rest_line5" = "You don’t need to do anything";
+
+// Lonely
+"lonely_line1" = "You’re not alone";
+"lonely_line2" = "Thank you for coming here";
+"lonely_line3" = "Your feelings are reaching me";
+"lonely_line4" = "This connection hasn’t disappeared";
+"lonely_line5" = "Let’s stay together for now";
+
+/* HugFeelingView2 */
+"hug_action_with_name" = "%1$@ and %2$@";
+"default_partner" = "You";
+"default_you" = "You";
+"hug_part_arm"   = "Arms";
+"hug_part_leg"   = "Legs";
+"hug_part_chest" = "Chest";
+"hug_part_waist" = "Waist";
+"hug_part_hair"  = "Hair";
+"hug_part_nose"  = "Nose";
+"hug_part_lips"  = "Lips";
+
+/* Hug actions */
+"hug_action_arm" = "arms gently brush";
+"hug_action_leg" = "thighs softly touch";
+"hug_action_chest" = "chests press together";
+"hug_action_waist" = "a hand rests on the waist";
+"hug_action_hair" = "fingers run through hair";
+"hug_action_nose" = "noses softly touch";
+"hug_action_lips" = "both close their eyes";
+
+/* Hug lines */
+// Arm
+"hug_line_arm_1" = "When our arms touch, I want to be closer to %@";
+"hug_line_arm_2" = "I feel %@’s warmth";
+"hug_line_arm_3" = "Touching %@’s arm makes my heart race";
+"hug_line_arm_4" = "The feel of %@’s arm makes me relax";
+"hug_line_arm_5" = "Even a small touch with %@ feels special";
+
+// Leg
+"hug_line_leg_1" = "%@’s thigh feels comforting";
+"hug_line_leg_2" = "I want to be closer to %@";
+"hug_line_leg_3" = "I can feel %@ right beside me";
+"hug_line_leg_4" = "There’s a quiet sense of comfort with %@";
+"hug_line_leg_5" = "Staying like this with %@ feels nice";
+
+// Chest
+"hug_line_chest_1" = "Our breathing syncs with %@";
+"hug_line_chest_2" = "I can hear %@’s heartbeat";
+"hug_line_chest_3" = "A calm feeling spreads quietly";
+"hug_line_chest_4" = "%@’s breath feels close and soothing";
+"hug_line_chest_5" = "Holding %@ feels warm and safe";
+
+// Waist
+"hug_line_waist_1" = "Touching %@’s waist makes me want to support them";
+"hug_line_waist_2" = "I don’t want to let go of %@";
+"hug_line_waist_3" = "I naturally lean into %@";
+"hug_line_waist_4" = "I feel %@’s softness";
+"hug_line_waist_5" = "I feel protected by %@";
+
+// Hair
+"hug_line_hair_1" = "Touching %@’s hair makes my fingertips warm";
+"hug_line_hair_2" = "Each gentle stroke makes %@ feel closer";
+"hug_line_hair_3" = "%@’s scent calms me";
+"hug_line_hair_4" = "Pretending to fix hair, I end up touching %@";
+"hug_line_hair_5" = "%@ seems a little shy, and it makes my heart race";
+
+// Nose
+"hug_line_nose_1" = "Our noses touch, and I hold my breath";
+"hug_line_nose_2" = "Being this close makes me shy";
+"hug_line_nose_3" = "Time stops when I look at %@";
+"hug_line_nose_4" = "I try not to laugh";
+"hug_line_nose_5" = "This closeness makes my heart race, %@";
+
+// Lips
+"hug_line_lips_1" = "Closing my eyes with %@ makes everything feel intense";
+"hug_line_lips_2" = "This moment alone feels fulfilling";
+"hug_line_lips_3" = "No words are needed";
+"hug_line_lips_4" = "A quiet excitement builds";
+"hug_line_lips_5" = "I want more with %@...";
+
+/* Special Skinship */
+
+"special_title" = "Special　Physical Connect";
+
+
+"special_subtitle" = "Write a line you want to hear.";
+"special_line_label" = "Line";
+"special_placeholder" = "e.g. Can I hug you?";
+"special_save" = "Save";
+"special_read" = "Say it";
+"special_clear" = "Clear";
+"special_saved_toast" = "Saved";
+"special_collection_title" = "Special Skinship Collection";
+"special_collection_empty" = "Nothing here yet";
+
+"special_suggest_title" = "About the lines";
+"special_suggest_1" = "Example: Can I hug you?";
+"special_suggest_2" = "Something you wish to hear at least once in your life.";
+"special_suggest_3" = "Be bold and express yourself.";
+"special_suggest_4" = "Now it’s your turn 👍";
+
+/* Main */
+"main_future_title" = "NEO SKINSHIP";
+"main_future_sub" = "Synced with your emotions";
+"main_future_cta" = "START";
+"main_future_cta_sub" = "Go to emotion selection";
+"main_action_change_sub" = "Reset partner settings";
+"main_action_list_sub" = "View registered partners";
+"main_section" = "Information";
+"main_list_hint" = "Manage your partners";
+"main_hud_status" = "ONLINE";
+
+"trend_title" = "Trends";
+"trend_count_title" = "Human Touch Count";
+"trend_prev_week" = "← Previous week";
+"trend_next_week" = "Next week →";
+
+"chart_axis_date" = "Date";
+"chart_axis_count" = "Count";
+
+"gender_male_short" = "Male";
+"gender_female_short" = "Female";
+"gender_unknown_short" = "Unknown";

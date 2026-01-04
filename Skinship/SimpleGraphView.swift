@@ -11,20 +11,20 @@ struct SimpleGraphView: View {
     
     let labelFormatter: DateFormatter = {
         let f = DateFormatter()
-        f.dateFormat = "d"
+        f.dateFormat = "d" // 日だけ（これは多言語でもOK）
         return f
     }()
     
     var body: some View {
         VStack(spacing: 12) {
             VStack(spacing: 120) {
-                Text("トレンド")
+                Text(NSLocalizedString("trend_title", comment: "Trend title"))
                     .font(.title)
                     .fontWeight(.bold)
                     .frame(maxWidth: .infinity, alignment: .center)
                 
                 VStack(spacing: 20) {
-                    Text("スキンシップの回数")
+                    Text(NSLocalizedString("trend_count_title", comment: "Count title"))
                         .font(.title2)
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, alignment: .center)
@@ -37,14 +37,14 @@ struct SimpleGraphView: View {
             
             // 週切り替えボタン
             HStack {
-                Button("← 前の週") {
+                Button(NSLocalizedString("trend_prev_week", comment: "Previous week")) {
                     currentWeekOffset -= 1
                     loadData()
                 }
                 
                 Spacer()
                 
-                Button("次の週 →") {
+                Button(NSLocalizedString("trend_next_week", comment: "Next week")) {
                     if currentWeekOffset < 0 {
                         currentWeekOffset += 1
                         loadData()
@@ -58,10 +58,9 @@ struct SimpleGraphView: View {
             Chart {
                 ForEach(data) { item in
                     BarMark(
-                        x: .value("日付", labelFormatter.string(from: item.date)),
-                        y: .value("回数", item.count)
+                        x: .value(NSLocalizedString("chart_axis_date", comment: "X axis"), labelFormatter.string(from: item.date)),
+                        y: .value(NSLocalizedString("chart_axis_count", comment: "Y axis"), item.count)
                     )
-                    .foregroundStyle(.blue)
                 }
             }
             .chartYScale(domain: 0...(maxYValue + 2))
@@ -77,7 +76,6 @@ struct SimpleGraphView: View {
         .onAppear {
             loadData()
         }
-
     }
     
     func loadData() {
@@ -90,10 +88,6 @@ struct SimpleGraphView: View {
         }
         
         let allData = HugDataStore.shared.load()
-        print("Loaded data count: \(allData.count)")
-        for d in allData {
-            print("data date: \(d.date), count: \(d.count)")
-        }
         
         data = (0..<7).map { offset in
             let date = calendar.date(byAdding: .day, value: offset, to: startDate)!
@@ -101,15 +95,10 @@ struct SimpleGraphView: View {
             let count = allData.first(where: {
                 calendar.isDate(calendar.startOfDay(for: $0.date), inSameDayAs: normalizedDate)
             })?.count ?? 0
-            print("date: \(date), count: \(count)")
+            
             return DailyData(date: date, count: count)
         }
     }
-
-
-
-
-
     
     func formattedMonthRange(from data: [DailyData]) -> String {
         guard let firstDate = data.first?.date,
@@ -118,18 +107,19 @@ struct SimpleGraphView: View {
         }
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy年M月"
+        // ✅ ここが重要：言語ごとに “自然な月表示” にする
+        formatter.setLocalizedDateFormatFromTemplate("yMMMM") // 例: 2025年12月 / December 2025
+        
         let startMonth = formatter.string(from: firstDate)
         let endMonth = formatter.string(from: lastDate)
         
-        return startMonth == endMonth ? startMonth : "\(startMonth)〜\(endMonth)"
+        return startMonth == endMonth ? startMonth : "\(startMonth)–\(endMonth)"
     }
 }
 
-// Dateの拡張（startOfWeekを取得）
+// Dateの拡張（startOfDay）
 extension Date {
     var startOfDay: Date {
         Calendar.current.startOfDay(for: self)
     }
 }
-

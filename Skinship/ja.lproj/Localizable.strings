@@ -1,0 +1,280 @@
+
+//  Localizable.strings
+//  Skinship
+//
+//  Created by 田中　よしき on 2025/12/20.
+  
+"intro_p1" = "今、少しだけ人の温度が恋しくなっていませんか?";
+"intro_p2" = "強く求めているわけじゃないけど、誰かの存在を感じたい。";
+"intro_p3" = "それは寂しさというより、安心できる場所を探している感覚に近いのかもしれません。";
+"intro_p4" = "こうして触れ合いを求めたことは、あなたが自分を大切にしようとしている証拠です。";
+"intro_p5" = "無理に何かを変えようとしなくていい。今は、感じたままで大丈夫です。";
+"intro_p6" = "今夜は、少しだけ心を預けてみてください💐";
+
+"intro_start" = "はじめる一択";
+"intro_dont_show_again" = "今後表示しない";
+"intro_skip" = "スキップ";
+
+/* 入力画面タイトル */
+"input_title" = "入力画面";
+
+/* 名前入力欄のタイトル */
+"enter_name" = "相手の名前を入力してください。";
+
+/* 名前入力欄のプレースホルダー */
+"enter_name1" = "しょうへい";
+"enter_name2" = "まみこ";
+"example_prefix" = "例：";
+
+/* 性別選択のタイトル */
+"gender_selection" = "相手の性別を選択してください。";
+
+/* 性別 */
+"male" = "男性";
+"female" = "女性";
+
+"gender_male" = "男性";
+"gender_female" = "女性";
+"gender_unknown" = "未設定";
+
+/* =========================
+ UserListView
+ ========================= */
+
+
+"user_list_empty_title" = "まだ登録がありません";
+
+
+/* 編集モード */
+"user_list_edit" = "編集";
+"user_list_done" = "完了";
+
+/* 登録ボタン */
+"register" = "登録";
+
+/* スタートボタン */
+"start" = "はじめる";
+
+/* ハグ部位選択 */
+"select_hug_part" = "スキンシップする部位を選んでください";
+"user_list_title" = "相手リスト";
+"user_list_subtitle" = "タップで相手を切り替え";
+
+"user_list_delete_confirm_title" = "削除しますか？";
+"user_list_delete" = "削除";
+"user_list_cancel" = "キャンセル";
+
+
+"user_list_empty_subtitle" = "まずは相手を登録してね";
+
+/* MainView */
+"main_title" = "メイン画面";
+"change_partner" = "相手を変更する";
+"registered_user_list" = "登録相手リスト";
+"skin_with" = "%@ とスキンシップする";
+
+"select_feeling" = "今の気分を選んでね";
+
+"voice_settings" = "音声設定";
+"trend" = "トレンド";
+"exciting_experience" = "ドキドキ体験";
+"gift_friend" = "友達にプレゼント";
+
+"input_title2" = "入力画面2";
+"enter_name3" = "自分の名前を入力してください。";
+
+/* Settings */
+
+"voice_enable" = "音声読み上げを有効にする";
+"personality_select" = "性格選択";
+"personality_gentle" = "やさしい";
+"personality_bright" = "明るい";
+"personality_cool" = "クール";
+"voice_test" = "テスト再生";
+"start_name_input" = "ドキドキ体験";
+
+"voice_description" = "※ 音声を男性の声に切り替えるには\n\niPhone / iPad の\n「設定」→「アクセシビリティ」→「スピーチ」→「声」\nから「日本語」を選び、\n男性音声の「Otoya」をダウンロード・選択してください。\n\n本アプリでは、端末で設定された音声が使用されます。";
+
+
+"feeling_hotto" = "ほっとしたい";
+"feeling_calm" = "落ち着きたい";
+"feeling_balanced" = "ととのえたい";
+"feeling_soft" = "ふわっとしたい";
+"feeling_rest" = "休みたい";
+"feeling_lonely" = "さみしい";
+
+//hugMessageWithName
+"hug_hotto" = "がそっと頭に手を添えたよ";
+"hug_calm" = "があなたの腕を優しく包んだよ";
+"hug_balanced" = "と一緒にスーッと息を吸ったよ";
+"hug_soft" = "がふわっと肩に触れたよ";
+"hug_rest" = "がとなりで静かに手を握ってるよ";
+"hug_lonely" = "とギュッとハグしたよ";
+
+//displayedLine
+//ほっと
+"hotto_line1" = "今日はよくがんばったね";
+"hotto_line2" = "少し力を抜こう";
+"hotto_line3" = "ゆっくりしてね";
+"hotto_line4" = "今は何もしなくていいよ";
+"hotto_line5" = "ここで一息つこう";
+
+
+"calm_line1" = "ゆっくりで大丈夫";
+"calm_line2" = "落ち着いていこう";
+"calm_line3" = "静かな時間を過ごそう";
+"calm_line4" = "呼吸を整えてみて";
+"calm_line5" = "そのままでいいよ";
+//ととのえたい
+"balanced_line1" = "心と体を整えよう";
+"balanced_line2" = "深く息を吸ってみて";
+"balanced_line3" = "今の感覚に集中しよう";
+"balanced_line4" = "焦らなくていいよ";
+"balanced_line5" = "少しずつ戻っていこう";
+//ふわっと
+"soft_line1" = "やさしい気持ちでいよう";
+"soft_line2" = "そのまま身をゆだねて";
+"soft_line3" = "ふわっと力を抜いて";
+"soft_line4" = "心が軽くなるよ";
+//休みたい
+"rest_line1" = "今日はここで休もう";
+"rest_line2" = "無理しなくていいよ";
+"rest_line3" = "目を閉じてもいい";
+"rest_line4" = "安心していい時間だよ";
+"rest_line5" = "何もしなくて大丈夫";
+//さみしい
+"lonely_line1" = "一人じゃないよ";
+"lonely_line2" = "ここに来てくれてありがとう";
+"lonely_line3" = "気持ちはちゃんと届いてる";
+"lonely_line4" = "つながりは消えてないよ";
+"lonely_line5" = "今は一緒にいよう、、したい";
+
+
+
+//HugFeelingView2
+
+
+//hugActions
+"hug_action_with_name" = "%1$@と%2$@";
+"default_partner" = "あなた";
+"default_you" = "あなた";
+
+"hug_part_arm"   = "腕";
+"hug_part_leg"   = "脚";
+"hug_part_chest" = "胸";
+"hug_part_waist" = "腰";
+"hug_part_hair"  = "髪";
+"hug_part_nose"  = "鼻";
+"hug_part_lips"  = "唇";
+
+"hug_action_arm" = "腕が軽く交わる";
+"hug_action_leg" = "太ももがそっと触れ合う";
+"hug_action_chest" = "胸元を重ね合わせる";
+"hug_action_waist" = "腰にそっと触れる";
+"hug_action_hair" = "後ろ髪を撫でる";
+"hug_action_nose" = "鼻先がそっと触れる";
+"hug_action_lips" = "二人同時に目を閉じる";
+//hugLines
+//腕
+"hug_line_arm_1" = "腕が触れ合うと%@と、もっと近づきたくなる";
+"hug_line_arm_2" = "%@のぬくもりを感じる";
+"hug_line_arm_3" = "%@の腕に触れた瞬間、胸がドキドキする";
+"hug_line_arm_4" = "%@の腕の感触に、思わず力が抜ける";
+"hug_line_arm_5" = "%@と何気ない触れ合いが、特別に感じる";
+
+//足
+"hug_line_leg_1" = "%@のふとももが、気持ちいい";
+"hug_line_leg_2" = "%@ともっと近づきたくなる";
+"hug_line_leg_3" = "%@の存在を、すぐそばに感じる";
+"hug_line_leg_4" = "%@との距離に、静かな安心が生まれる";
+"hug_line_leg_5" = "%@と触れたままでいることが、心地いい";
+//胸元
+"hug_line_chest_1" = "胸元を重ねて、%@と呼吸がそろう";
+"hug_line_chest_2" = "%@の鼓動が、すぐそこに聞こえる";
+"hug_line_chest_3" = "静かに、安心感が広がっていく";
+"hug_line_chest_4" = "%@の息づかいが近くて、落ち着いてくる";
+"hug_line_chest_5" = "%@を包み込むと、あったかくて気持ちいい";
+//腰
+"hug_line_waist_1" = "腰に触れる手が、%@を支えたくなる";
+"hug_line_waist_2" = "%@と離れたくない";
+"hug_line_waist_3" = "自然に、%@に身を預けたくなる";
+"hug_line_waist_4" = "手で触れると%@の柔らかさを感じる";
+"hug_line_waist_5" = "%@に守られている感じがする";
+
+// hair（後ろ髪を撫でる）
+"hug_line_hair_1" = "%@の髪に触れた瞬間、指先が熱くなる";
+"hug_line_hair_2" = "そっと撫でるたびに、%@が近く感じる";
+"hug_line_hair_3" = "%@の匂いがふわっとして、気分が落ち着く";
+"hug_line_hair_4" = "髪を整えるふりをして、%@に触れてしまう";
+"hug_line_hair_5" = "%@が少し照れた気がして、こっちまでドキドキする";
+//鼻
+"hug_line_nose_1" = "鼻先が触れて、思わず息を止める";
+"hug_line_nose_2" = "ちかすぎる距離に、少し照れる";
+"hug_line_nose_3" = "%@と目が合って、時間が止まった";
+"hug_line_nose_4" = "笑いそうになるのを、こらえる";
+"hug_line_nose_5" = "この距離が、なぜかドキドキするよ、%@";
+//唇
+"hug_line_lips_1" = "%@と目を閉じた瞬間、一気に感触が大きくなる";
+"hug_line_lips_2" = "この瞬間だけで、満たされる";
+"hug_line_lips_3" = "何も言わなくても、伝わってくる";
+"hug_line_lips_4" = "静かな気持ちが、高鳴ってくる";
+"hug_line_lips_5" = "%@ともっと、、、したい！";
+
+"special_title" = "スペシャルスキンシップ";
+"special_subtitle" = "好きなセリフを入力して、言ってもらおう！";
+"special_line_label" = "セリフ";
+"special_placeholder" = "例：ぎゅーってしていい？";
+"special_save" = "保存";
+"special_read" = "言ってもらう";
+"special_clear" = "クリア";
+"special_saved_toast" = "保存しました";
+"special_collection_title" = "スペシャルスキンシップ集";
+"special_collection_empty" = "まだ何もありません";
+
+"special_suggest_title" = "セリフについて";
+
+"special_suggest_1" = "例：ぎゅーってしていい？";
+"special_suggest_2" = "人生で一度は言われてみたいことなど。";
+"special_suggest_3" = "思い切って、大胆な自分を出してみよう！";
+"special_suggest_4" = "次はあなたの出番です👍";
+
+"main_future_title" = "スキンシップシステム";
+
+"main_future_sub" = "今の気分に合わせて、触れ合いの演出へ";
+
+"main_future_cta" = "はじめる";
+
+"main_future_cta_sub" = "気分を選んで進みます";
+
+"main_action_change_sub" = "相手の設定をやり直します";
+
+"main_action_list_sub" = "登録した相手を確認できます";
+
+"main_section" = "情報";
+
+"main_list_hint" = "登録相手の管理ができます";
+"main_hud_status" = "ONLINE";
+"main_future_title" = "NEO SKINSHIP";
+"main_future_sub" = "感情に同期します";
+"main_future_cta" = "START";
+"main_future_cta_sub" = "感情選択モードへ";
+"change_partner" = "パートナー再設定";
+"registered_user_list" = "パートナーデータ";
+
+"trend_title" = "トレンド";
+"trend_count_title" = "スキンシップの回数";
+"trend_prev_week" = "← 前の週";
+"trend_next_week" = "次の週 →";
+
+"chart_axis_date" = "日付";
+"chart_axis_count" = "回数";
+
+"gender_male_short" = "男";
+"gender_female_short" = "女";
+"gender_unknown_short" = "未設定";
+/* 音声テスト用サンプル */
+"voice_test_text" = "こんにちは。マッチングフィーリングです。どうぞお楽しみ下さい。";
+
+
+
+

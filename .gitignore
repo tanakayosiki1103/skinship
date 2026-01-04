@@ -1,5 +1,9 @@
-# Xcode user-specific files
+.DS_Store
+**/.DS_Store
+
+# Xcode user-specific
 xcuserdata/
 *.xcuserstate
 
-
+# SwiftPM (Xcodeが勝手に作ることがある)
+Package.resolved

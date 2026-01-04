@@ -6,9 +6,11 @@ struct SkinshipApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView()
                 .environmentObject(settings)
+                .task {
+                    UnityAdsManager.shared.initialize()
+                }
         }
     }
 }
-
