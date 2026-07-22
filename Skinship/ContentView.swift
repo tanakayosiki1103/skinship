@@ -10,3 +10,4 @@ struct ContentView: View {
     ContentView()
         .environmentObject(UserSettings())
 }
+// GitHubの練習
